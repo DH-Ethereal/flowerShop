@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jc.dao.CartDao">
+
+    <!--购物车实体类嵌套-->
+    <resultMap id="App_cart" type="Cart" autoMapping="true">
+        <association property="flower" autoMapping="true" column="flowercode" select="com.jc.dao.FlowerDao.selectOne"/>
+        <association property="user" autoMapping="true" column="user_id" select="com.jc.dao.UserDao.selectOne"/>
+    </resultMap>
+
+    <!--添加购物车-->
+    <insert id="addCart" parameterType="Cart">
+        insert into cart(user_id,flowercode,count,totalprice)
+        values(#{user.user_id},#{flower.flowercode},#{count},#{totalprice})
+    </insert>
+
+    <!--修改购物车-->
+    <update id="updateCart" parameterType="Cart">
+        update cart set user_id=#{user.user_id},flowercode=#{flower.flowercode},count=#{count},totalprice=#{totalprice} where cart_id=#{cart_id}
+    </update>
+
+    <!--删除单个购物车-->
+    <delete id="deleteCart">
+        delete from cart where cart_id=#{cart_id}
+    </delete>
+
+    <!--清空本人购物车-->
+    <delete id="deleteAllCart">
+        delete from cart where user_id=#{user_id}
+    </delete>
+
+    <!--查询一个购物车-->
+    <select id="getOneCart" resultMap="App_cart">
+        select * from user_cart where cart_id=#{cart_id}
+    </select>
+
+    <!--查询本人购物车-->
+    <select id="getSelfCart" resultMap="App_cart">
+        select * from user_cart where user_id=#{user_id}
+    </select>
+</mapper>

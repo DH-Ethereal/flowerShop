@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jc.dao.OrderDao">
+
+    <!--订单实体类嵌套-->
+    <resultMap id="App_order" type="Order" autoMapping="true">
+        <association property="user" autoMapping="true" column="user_id" select="com.jc.dao.UserDao.selectOne"/>
+    </resultMap>
+
+    <!--增加订单-->
+    <insert id="addOrder" parameterType="Order">
+        insert into orders
+        value (#{order_id},#{user.user_id},#{touser_name},#{touser_tel},#{touser_address},#{totalprice},#{od_createtime},#{status},#{od_remark})
+    </insert>
+    
+    <!--删除订单-->
+    <delete id="deleteOrder">
+        delete from orders where order_id=#{order_id}
+    </delete>
+
+    <!--修改订单-->
+    <update id="updateOrder" parameterType="Order">
+        update orders set user_id=#{user.user_id},touser_name=#{touser_name},touser_tel=#{touser_tel},touser_address=#{touser_address},totalprice=#{totalprice},status=#{status},remark=#{od_remark} where order_id=#{order_id}
+    </update>
+
+    <!--查询一个订单-->
+    <select id="selectOne" resultMap="App_order">
+        select * from user_order where order_id=#{order_id}
+    </select>
+    <!--查询多个订单-->
+    <select id="selectAll" resultMap="App_order">
+        select * from user_order
+        <if test="user_id!=null">
+            where user_id=#{user_id}
+        </if>
+    </select>
+
+</mapper>

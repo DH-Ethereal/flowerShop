@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jc.dao.FlowerDao">
+    <!--增加商品-->
+    <insert id="addFlower" parameterType="Flower">
+        insert into flower
+        values (#{flowercode},#{type},#{flower_name},#{material},#{pack},#{descs},#{price},#{discount},#{image},#{deliverarea},#{amount},#{createtime},#{remark})
+    </insert>
+
+    <!--下架商品-->
+    <delete id="deleteFlower">
+        delete from flower where flowercode=#{flowercode}
+    </delete>
+    
+    <!--修改商品信息-->
+    <update id="updateFlower" parameterType="Flower">
+        update flower set type=#{type},flower_name=#{flower_name},material=#{material},pack=#{pack},descs=#{descs},price=#{price},discount=#{discount},image=#{image},deliverarea=#{deliverarea},amount=#{amount},createtime=#{createtime},remark=#{remark} where flowercode=#{flowercode}
+    </update>
+
+    <!--查找一个商品-->
+    <select id="selectOne" resultType="com.jc.pojo.Flower">
+        select * from flower where flowercode=#{flowercode}
+    </select>
+
+    <!--查询多个商品-->
+    <select id="selectSort" resultType="com.jc.pojo.Flower">
+        select * from flower
+        <if test="(sort==null or sort=='精选') and type!=null">
+            where type =#{type}
+        </if>
+        <if test="sort=='最畅销' and type!=null">
+            where type=#{type} order by amount asc
+        </if>
+        <if test="sort=='最畅销' and type==null">
+            order by amount asc
+        </if>
+        <if test="sort=='价格升序' and type!=null">
+            where type=#{type} order by price asc
+        </if>
+        <if test="sort=='价格升序' and type==null">
+            order by price asc
+        </if>
+        <if test="sort=='价格降序' and type!=null">
+            where type=#{type} order by price desc
+        </if>
+        <if test="sort=='价格降序' and type==null">
+            order by price desc
+        </if>
+        <if test="sort=='最新' and type!=null">
+            where type=#{type} order by createtime desc
+        </if>
+        <if test="sort=='最新' and type==null">
+            order by createtime desc
+        </if>
+        <if test="sort=='最早' and type!=null">
+            where type=#{type} order by createtime asc
+        </if>
+        <if test="sort=='最早' and type==null">
+            order by createtime asc
+        </if>
+    </select>
+
+    <!--销售商品-->
+    <update id="cull">
+        update flower set amount=amount-#{amount} where flowercode=#{flowercode}
+    </update>
+
+    <!--增加商品数量-->
+    <update id="increase">
+        update flower set amount=amount+#{amount} where flowercode=#{flowercode}
+    </update>
+</mapper>

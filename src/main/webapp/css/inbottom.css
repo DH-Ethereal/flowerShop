@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bottom{
+    width: 100%;
+    margin-top: 80px;
+}
+
+.bottom_top{
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 0.6px solid rgba(190, 190, 190, 0.5);
+    border-bottom: 0.6px solid rgba(190, 190, 190, 0.5);
+}
+
+.bottom_top>table{
+    width: 86%;
+    text-align: center;
+    margin: auto;
+    color: rgb(43, 43, 43);
+    letter-spacing: 1.5px;
+}
+
+.bottom_top th{
+    width: 33.3%;
+    font-size: 13px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.bottom_top td{
+    font-size: 13.8px;
+    color: rgba(43, 43, 43, 0.822);
+    cursor: pointer;
+    padding-bottom: 7px;
+}
+
+.vv{
+    width: 94%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.vv tr :first-child img{
+    height: 50px;
+}
+
+.vv tr>:nth-child(2){
+    text-align: center;
+    border-bottom: 1px solid rgba(32, 73, 83, 0.521);
+}
+
+.vv tr>:nth-child(2) span{
+    display: inline-block;
+    padding: 8px;
+    letter-spacing: 2px;
+    font-size: 17px;
+    font-family: 华文仿宋;
+    font-weight: bold;
+    background-image: linear-gradient(to top right, rgb(44, 180, 180),rgb(104, 40, 252));
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: pointer;
+}
+
+.vv tr>:nth-child(2) span div{
+    position: absolute;
+    width: 200px;
+}
+
+.vv tr :last-child{
+    text-align: right;
+}
+
+.vv tr :last-child img{
+    height: 45px;
+}
+
+.zd{
+    text-align: center;
+}
+
+.zd>span{
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background-image: url("../img/bottom04.png");
+    background-size: 90px 90px;
+    background-repeat: no-repeat;
+    margin: 18px;
+    transition: all 0.1s linear;
+    cursor: pointer;
+}
+
+.zd>span:hover{
+    background-image: url("../img/bottom03.png");
+}
+
+.zd>p{
+    margin-bottom: 20px;
+    font-size: 9px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgba(62, 66, 70, 0.801);
+    letter-spacing: 0.5px;
+}
+
+
+

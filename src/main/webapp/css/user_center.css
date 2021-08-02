@@ -1,0 +1,340 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(249, 248, 248);
+    line-height: 1.1;
+}
+
+.uc{
+    position: relative;
+    width: 72%;
+    margin: 15px auto;
+    height: 84vh;
+}
+
+.uc>.nav_bar{
+    position: absolute;
+    width: 15%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2vmax;
+    font-family: 楷体;
+    font-weight: 500;
+    letter-spacing: 0.125vmax;
+    color: rgb(31, 31, 31);
+    background-color: rgb(253, 253, 253);
+    box-shadow: 0.6px 0.6px 4px 0.8px rgba(199, 199, 199, 0.349);
+    border-radius: 3px;
+}
+
+.uc>.nav_bar>span{
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+
+.uc>.nav_bar>a{
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: rgb(31, 31, 31);
+    transition: all 0.2s linear;
+}
+
+.uc>.nav_bar>a:hover{
+    background-color: rgba(199, 199, 199, 0.45);
+}
+
+.uc>.nav_bar span:hover,.nav_barFirst{
+    background-color: rgba(199, 199, 199, 0.45);
+}
+
+.uc>.nav_bar>div{
+    width: 100%;
+    height: 4px;
+    border-top: 1px solid rgba(194, 194, 194, 0.507);
+}
+
+.uc>.content{
+    display: block;
+    position: relative;
+    float: right;
+    width: 83.6%;
+    min-height: 84vh;
+}
+
+.uc>.content>.zs{
+    display: none;
+    width: 100%;
+    height: 100%;
+    font-family: 楷体;
+    font-weight: 400;
+}
+
+.zs .z1,.z2,.z3,.z4{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0.6px 0.6px 4px 0.8px rgba(199, 199, 199, 0.219);
+    border-radius: 3px;
+}
+
+.zs>.z1{
+    position: relative;
+    padding: 5.5vh 5.5vh;
+    height: 26vh;
+    background:linear-gradient(rgba(30, 255, 236, 0.082),rgb(255, 255, 255));
+}
+
+.zs>.z1>span{
+    display: block;
+    text-align: center;
+    width: 13vh;
+    line-height: 13vh;
+    border-radius: 50%;
+    font-size: 2.5vmax;
+    color: rgba(255, 255, 255, 0.815);
+    background-color: rgb(55, 171, 209);
+    border: 0.3vh solid rgb(89, 255, 227);
+}
+
+.zs>.z1>div{
+    position: absolute;
+    top: 6vh;
+    left: 22vh;
+    font-size: 1.6vmax;
+    letter-spacing: 0.4vh;
+}
+
+.zs>.z1>div>p{
+    display: block;
+    padding: 1.5vh 0;
+    margin: 0;
+}
+
+.zs>.z1>div>p:last-of-type{
+    margin: 0;
+    font-size: 1.12vmax;
+    width: 50vh;
+    color: rgba(43, 43, 43, 0.815);
+}
+
+.zs>.z1>div>p:last-of-type a{
+    float: right;
+    text-decoration: none;
+    color: rgb(255, 37, 37);
+}
+
+.zs>.z2{
+    height: 56.8vh;
+    position: absolute;
+    bottom: 0;
+    padding: 4vh 3vh 3vh;
+}
+
+.zs>.z2>span{
+    font-weight: 600;
+    font-size: 1.45vmax;
+    display: block;
+}
+
+.zs .z2>div>p{
+    display: block;
+    border-bottom: 1px solid rgba(194, 194, 194, 0.247);
+    font-size: 1.2vmax;
+    line-height: 11.5vh;
+    padding: 0 3vh;
+    margin: 0;
+}
+
+.zs .z2>div>p>span:first-of-type{
+    color: rgba(31, 31, 31, 0.74);
+    display: inline-block;
+    width: 16vh;
+}
+
+.zs #z1{
+    background:linear-gradient(rgba(30, 255, 86, 0.082),rgb(255, 255, 255));
+    text-align: center;
+}
+
+.zs #z1>img{
+    width: 14vh;
+}
+
+.zs .z2>div>p>a{
+    position: absolute;
+    right: 8vh;
+    text-decoration: none;
+    font-size: 1.2vmax;
+    color: rgb(55, 147, 165);
+}
+
+.zs .z3 {
+    background-image: url("../img/cart_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0.6px 0.6px 4px 0.8px rgba(199, 199, 199, 0.349);
+}
+
+.z3>div{
+    position: relative;
+    height: 84vh;
+    padding: 3vh 3vh;
+    background-color: rgba(224, 224, 224, 0.596);
+}
+
+.z3>div>div:first-of-type{
+    position: relative;
+    width: 100%;
+    height: 72vh;
+    overflow-y: auto;
+}
+
+.cart0{
+    position: relative;
+    display: block;
+    border: 0.1vh solid rgba(48, 14, 75, 0.5);
+    border-radius: 6.5vh;
+    margin-bottom: 1.5vh;
+}
+
+.cart0>a>img{
+    display: block;
+    width: 13vh;
+    border-radius: 50%;
+}
+
+.cart0>table{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 14vh;
+
+}
+
+.cart0>table tr{
+    line-height: 5.9vh;
+    text-align: center;
+    font-size: 1.11vmax;
+    letter-spacing: 0.1vh;
+    font-family: 华文仿宋;
+    font-weight: 560;
+    color: rgb(32, 32, 32);
+}
+
+.cart0>table td{
+    width: 28vh;
+    /* border: 1px solid red; */
+}
+
+.cart0>table td:last-of-type{
+    width: 17vh;
+}
+
+.zs .cart0 .form_d{
+    text-decoration: none;
+    font-size: 1.1vmax;
+    font-family: 楷体;
+    cursor: pointer;
+    background-color: rgba(9, 99, 126, 0.575);
+    color: rgba(255, 255, 255, 0.89);
+    padding: 0.7vh;
+    border-radius: 0.7vh;
+    outline: none;
+    border: none;
+    transition: all 0.1s linear;
+}
+
+
+.zs .cart0 .form_d:hover{
+    background-color: rgba(30, 50, 94, 0.658);
+}
+
+/* 数量 */
+.amount_mn{
+    width: 100%;
+}
+.amount_mn button{
+    background-color: rgba(109, 109, 109, 0.425);
+    border-radius: 50%;
+    line-height: 3vh;
+    width: 3vh;
+    font-size: 1.2vmax;
+    font-weight: 60;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+/*禁用点击*/
+.disable {
+    pointer-events: none;
+}
+
+.amount_mn input{
+    text-align: center;
+    width: 13%;
+    font-size: 1.11vmax;
+    display: inline-block;
+    outline: none;
+    border: none;
+    background-color: rgba(224, 224, 224, 0);
+}
+
+.z302{
+    font-size: 1.2vmax;
+}
+
+.z302>a,.z302>span{
+    font-size: 1.4vmax;
+    line-height: 6vh;
+    padding: 0 2vh;
+}
+
+.z3>div>div:last-of-type>span:first-of-type{
+    display: inline-block;
+    text-align: center;
+    width: 23%;
+    background-image: linear-gradient(to top right,rgb(152, 113, 223),rgb(50, 186, 196));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    margin-left: 45%;
+    margin-right: 1%;
+}
+
+.z302>a{
+    text-decoration: none;
+    font-family: 楷体;
+    background-color: rgba(29, 95, 139, 0.925);
+    color: rgba(255, 255, 255, 0.815);
+    padding: 1vh;
+    border-radius: 0.7vh;
+    outline: none;
+    border: none;
+    transition: all 0.1s linear;
+    cursor: pointer;
+}
+
+.z302>a:hover{
+    background-color: rgb(60, 228, 205);
+    color: rgb(27, 27, 34);
+}
+
+.z4{
+    position: relative;
+    width: 100%;
+    height: 84vh;
+    padding: 3vh 3vh;
+    font-size: 1.1vmax;
+    font-family: 楷体;
+    font-weight: 200;
+    text-align: center;
+    overflow: auto;
+}
+

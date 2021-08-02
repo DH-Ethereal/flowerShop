@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.pop{
+    width: 100%;
+    height: 100%;
+}
+
+/* 弹窗部分 */
+.pop_bg{
+    display: block;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:999;
+    -moz-opacity: 0.8;
+    opacity:0.4;
+}
+.white_content {
+    display: block;
+    position: absolute;
+    top: 37.5%;
+    left: 37.5%;
+    width: 25%;
+    height: 25%;
+    border-radius: 2.5vh;
+    border: 0.1vh solid rgba(143, 189, 204, 0.822);
+    background-color: rgb(255, 255, 255);
+    z-index:1000;
+    overflow: auto;
+    animation: f 0.75s linear forwards;
+}
+
+@keyframes f{
+    16.65% {
+        transform: skew(-8deg);
+    }
+
+    33.3% {
+        transform: skew(6deg);
+    }
+
+    49.95% {
+        transform: skew(-4deg);
+    }
+
+    66.6% {
+        transform: skew(4deg);
+    }
+
+    83.25% {
+        transform: skew(-2deg);
+    }
+
+    100% {
+        transform: skew(0);
+    }
+}
+
+.white_content>div{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.white_content>div>img{
+    display: block;
+    width: 14%;
+    margin: 6.5% auto 2%;
+    overflow: auto;
+}
+.white_content>div>span{
+    display: block;
+    margin: 3.5% auto;
+    font-size: 1.5vmax;
+    letter-spacing: 0.5vh;
+    font-family: 楷体;
+}
+.but{
+    display: block;
+    width: 28%;
+    line-height: 4.5vh;
+    border-radius: 2.5vh;
+    transition:all 0.15s linear;
+    cursor: pointer;
+    border: 0.1vh solid rgba(143, 189, 204, 0.822);
+    background-color: rgba(53, 171, 182, 0.315);
+    color: rgba(2, 11, 12, 0.808);
+}
+.but:hover{
+    background-color: rgba(8, 32, 36, 0.87);
+    color:rgba(153, 182, 176, 0.973);
+}

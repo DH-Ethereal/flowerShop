@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <!--
+        配置日志内容输出的位置及格式
+
+    -->
+    <Appenders>
+        <!--
+            Console：控制台输出
+            name="Console":该配置的唯一标识
+            target="SYSTEM_OUT":所使用的输出语句
+        -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--
+                配置日志数据的格式:
+                %d{yyyy-MM-dd HH:mm:ss.SSS}:日期时间格式
+                [%t]:执行的线程
+                %-5level:所属日志级别
+                %logger{36}:当前日志输出的位置(哪个方法输出的该日志)
+                %msg:日志消息
+                %n:换行
+            -->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!--
+            日志文件输出
+        -->
+<!--        <File name="syslogFile" fileName="syslog.log">-->
+<!--            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
+<!--        </File>-->
+    </Appenders>
+
+    <!--
+        配置需要日志输出的包
+        additivity="false":配置存在重复输出的日志只输出一次
+        level="trace":指定当前日志包的输出级别
+    -->
+    <Loggers>
+        <Logger name="com.jc.dao" level="trace" additivity="false" >
+            <!--
+                配置当前包中的日志信息输出位置
+                ref的值是Appenders配置中的一个name的值
+            -->
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="syslogFile"/>
+        </Logger>
+        <!--
+            配置日志系统的根级别，根级别为统一输出级别，如果未单独设置日志级别，则按照该级别的配置输出日志
+            log4j的日志级别分为以下几种(从低到高):
+                1.trace:跟踪级
+                2.debug:调试级
+                3.info:消息级
+                4.Warn:警告级
+                5.error:错误级
+                5.Fatal:致命级
+            在配置级别时，输出的日志级别为所配置级别以及该级别以上的日志信息
+        -->
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="syslogFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

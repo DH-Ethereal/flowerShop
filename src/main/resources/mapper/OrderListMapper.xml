@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jc.dao.OrderListDao">
+
+    <!--订单详情实体类嵌套-->
+    <resultMap id="App_orderList" type="OrderList" autoMapping="true">
+        <association property="order" autoMapping="true" column="order_id" select="com.jc.dao.OrderDao.selectOne"/>
+        <association property="flower" autoMapping="true" column="flowercode" select="com.jc.dao.FlowerDao.selectOne"/>
+    </resultMap>
+    <!--新增订单详情-->
+    <insert id="addOrderList" parameterType="OrderList">
+        insert into orderlist(order_id,flowercode,count,summary)
+        values(#{order.order_id},#{flower.flowercode},#{count},#{summary})
+    </insert>
+
+    <!--删除一个订单详情-->
+    <delete id="deleteOrderList">
+        delete from orderlist where od_id=#{od_id}
+    </delete>
+
+    <!--修改订单详情-->
+    <update id="updateOrderList" parameterType="OrderList">
+        update orderlist set order_id=#{order.order_id},flowercode=#{flower.flowercode},count=#{count},totalprice=#{summary} where od_id=#{od_id}
+    </update>
+
+    <!--查询一个订单详情-->
+    <select id="selectOne" resultMap="App_orderList">
+        select * from order_orderlist where od_id=#{od_id}
+    </select>
+
+    <!--查询多个订单-->
+    <select id="selectAll" resultMap="App_orderList">
+        select * from order_orderlist
+        <if test="order_id!=null">
+            where order_id=#{order_id}
+        </if>
+    </select>
+</mapper>

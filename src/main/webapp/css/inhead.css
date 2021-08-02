@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(249, 248, 248);
+}
+
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.header{
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+
+.top{
+    width: 100%;
+}
+
+.top table{
+    width: 100%;
+    line-height: 34px;
+    text-align: center;
+    background-color:  #16242c;
+}
+
+.top td{
+    width: 30%;
+    color: rgb(255, 246, 245);
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.top a{
+    color: rgb(255, 246, 245);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    transition: all 0.25s;
+}
+
+#fu{
+    position: absolute;
+}
+
+#t1{
+    display: inline-block;
+    text-align: center;
+    padding-left: 2px;
+    width: 33px;
+    border-radius: 50%;
+    font-size: 14px;
+    background-color: rgb(21, 177, 204);
+    transition: all 0.2s linear;
+}
+
+#t1,#t2{
+    color: white;
+}
+
+.user{
+    position: absolute;
+    width: 200px;
+    top: 38px;
+    right: -88px;
+    color: black;
+    background-color: rgb(254, 254, 254);
+    border-radius: 10px;
+    box-shadow: 0.5px 1px 4px 0.5px rgba(199, 199, 199, 0.562);
+    text-align: center;
+    z-index: 1002;
+    display: none;
+}
+
+#t2{
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    background-color: rgb(21, 177, 204);
+    position: relative;
+    top: -25px;
+}
+
+.user>h2{
+    position: relative;
+    top: -12px;
+    font-size: 22px;
+    font-family: 华文中宋;
+    font-weight: 500;
+    margin: 0;
+}
+
+.user>div>div{
+    width: 100%;
+    height: 4px;
+    border-top: 1px solid rgba(194, 194, 194, 0.507);
+}
+
+.user>div>a{
+    display: inline-block;
+    width: 100%;
+    color: rgba(40, 40, 40, 0.85);
+    font-family: 华文仿宋;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6.8px;
+    transition: all 0.1s linear;
+}
+
+.user>div>a:hover{
+    background-color: rgba(199, 199, 199, 0.45);
+    color: rgba(40, 40, 40, 0.85);
+}
+
+.head{
+    width: 100%;
+    background-image: url("../img/header.png");
+    background-color: #233540;
+}
+
+.head table{
+    width: 72%;
+    margin: auto;
+    text-align: center;
+}
+
+.head td{
+    width: 14.3%;
+}
+
+.head a{
+    display: inline-block;
+    width: 100%;
+    height: 90px;
+    line-height: 91px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 13.5px;
+    letter-spacing: 2.5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all 0.25s;
+}
+
+.header a:hover{
+    color: rgb(172, 22, 22);
+}
+
+.head a>img{
+    width: 68%;
+    margin: 11px 0;
+}
+
+.right{
+    position: absolute;
+    right: 100px;
+    top: 52px;
+}
+
+.right>a{
+    display: block;
+    width: 46px;
+    height: 35px;
+}
+
+.zhan{
+    width: 100%;
+    height: 124px;
+}
