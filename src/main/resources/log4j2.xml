@@ -43,7 +43,7 @@
                 ref的值是Appenders配置中的一个name的值
             -->
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="syslogFile"/>
+<!--            <AppenderRef ref="syslogFile"/>-->
         </Logger>
         <!--
             配置日志系统的根级别，根级别为统一输出级别，如果未单独设置日志级别，则按照该级别的配置输出日志
@@ -58,7 +58,7 @@
         -->
         <Root level="debug">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="syslogFile"/>
+<!--            <AppenderRef ref="syslogFile"/>-->
         </Root>
     </Loggers>
 </Configuration>

@@ -6,7 +6,7 @@
 
     <!--订单实体类嵌套-->
     <resultMap id="App_order" type="Order" autoMapping="true">
-        <association property="user" autoMapping="true" column="user_id" select="com.jc.dao.UserDao.selectOne"/>
+        <association property="user" autoMapping="true" javaType="User"/>
     </resultMap>
 
     <!--增加订单-->
