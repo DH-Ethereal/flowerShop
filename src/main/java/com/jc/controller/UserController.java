@@ -81,7 +81,7 @@ public class UserController {
         }catch (Exception e){
             num = 0;
         }
-        if (num == 1){
+        if (num != 0){
             model.addAttribute("info","注册成功!");
             model.addAttribute("img","/img/true.png");
             if (p.equals("reg")){
@@ -109,7 +109,7 @@ public class UserController {
             num = 0;
         }
         bgData(model);
-        if (num == 1){
+        if (num != 0){
             model.addAttribute("info","注销成功!");
             model.addAttribute("img","/img/true.png");
             return "bms";

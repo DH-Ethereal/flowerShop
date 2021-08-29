@@ -72,7 +72,7 @@ public class OrderController {
         }
         //获取购物车,做订单详情，且改变商品数量
         List<Cart> cartList = cartService.getSelfCart(user.getUser_id());
-        if (n == 1){
+        if (n != 0){
             for (Cart cart : cartList){
                 OrderList orderList = new OrderList();
                 orderList.setOrder(orderService.selectOne(order_id));
@@ -103,7 +103,7 @@ public class OrderController {
             }
         }
         user_centerData(model,session);
-        if (n == 1&&flag&&m == 1){
+        if (n != 0&&flag&&m != 0){
             model.addAttribute("info","订购成功!");
             model.addAttribute("img","/img/true.png");
             return "user_center";
@@ -145,7 +145,7 @@ public class OrderController {
             }
         }
         user_centerData(model,session);
-        if (j == 1){
+        if (j != 0){
             model.addAttribute("info","取消成功!");
             model.addAttribute("img","/img/true.png");
             return "user_center";

@@ -78,7 +78,7 @@ public class FlowerController {
             num = 0;
         }
         bgData(model);
-        if (num == 1){
+        if (num != 0){
             model.addAttribute("info","下架成功!");
             model.addAttribute("img","/img/true.png");
             return "bms";
@@ -110,7 +110,7 @@ public class FlowerController {
                 num = 0;
             }
             bgData(model);
-            if (num == 1){
+            if (num != 0){
                 model.addAttribute("info","上架成功!");
                 model.addAttribute("img","/img/true.png");
                 return "bms";
@@ -127,7 +127,7 @@ public class FlowerController {
             }
         }
         bgData(model);
-        if (num == 1){
+        if (num != 0){
             model.addAttribute("info","修改成功!");
             model.addAttribute("img","/img/true.png");
             return "bms";

@@ -97,7 +97,7 @@ public class CartController {
                 num = 0;
             }
         }
-        if (num == 1){
+        if (num != 0){
             model.addAttribute("info","成功加入购物车!");
             model.addAttribute("img","/img/true.png");
             return "detail";
@@ -119,7 +119,7 @@ public class CartController {
             num = 0;
         }
         user_centerData(model,session);
-        if (num == 1){
+        if (num != 0){
             model.addAttribute("info","已移出购物车!");
             model.addAttribute("img","/img/true.png");
             return "user_center";
@@ -142,7 +142,7 @@ public class CartController {
             num = 0;
         }
         user_centerData(model,session);
-        if (num == 1){
+        if (num != 0){
             model.addAttribute("info","已清空购物车!");
             model.addAttribute("img","/img/true.png");
             return "user_center";
